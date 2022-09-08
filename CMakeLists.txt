@@ -31,6 +31,7 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
         "./include/"
         "./include/GL/"
         "./include/GLFW/"
+        "./include/spdlog/"
     )
     link_directories(
         "./lib"
