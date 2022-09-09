@@ -1,6 +1,8 @@
 # lvvi
 
-使用OpenGL可视化输出mediapipe的三维坐标
+使用OpenGL可视化mediapipe的三维坐标
+
+![Scatter visualization](doc/scatter_visualization.gif)
 
 ## 开源许可
 
