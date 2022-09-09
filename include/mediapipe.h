@@ -1,5 +1,5 @@
-#ifndef MEDIAPIPE_HPP
-#define MEDIAPIPE_HPP
+#ifndef LLVI_MEDIAPIPE_H_
+#define LLVI_MEDIAPIPE_H_
 
 #include "mediapipe_api.h"
 #include "mediapipe_interface.h"

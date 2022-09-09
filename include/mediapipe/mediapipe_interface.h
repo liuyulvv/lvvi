@@ -1,5 +1,5 @@
-#ifndef MEDIAPIPE_INTERFACE_H_
-#define MEDIAPIPE_INTERFACE_H_
+#ifndef LLVI_MEDIAPIPE_INTERFACE_H_
+#define LLVI_MEDIAPIPE_INTERFACE_H_
 
 #include "mediapipe_log.h"
 #include <opencv2/opencv.hpp>

@@ -1,5 +1,5 @@
-#ifndef MEDIAPIPE_LOG_H_
-#define MEDIAPIPE_LOG_H_
+#ifndef LLVI_MEDIAPIPE_LOG_H_
+#define LLVI_MEDIAPIPE_LOG_H_
 
 #include <string>
 
