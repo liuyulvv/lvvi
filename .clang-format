@@ -1,0 +1,24 @@
+# Use the Google style in this project.
+BasedOnStyle: Google
+
+IndentWidth: 4
+TabWidth: 4
+ColumnLimit: 0
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+QualifierAlignment: Left
+
+IndentAccessModifiers: false
+AccessModifierOffset: -4
+
+SortIncludes: false
+
+IncludeBlocks: Merge
+
+RawStringFormats:
+- Language: TextProto
+  Delimiters:
+  - 'pb'
+  - 'proto'
+  BasedOnStyle: Google
