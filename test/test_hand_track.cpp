@@ -51,7 +51,7 @@ int main() {
     // vector<double> stores 5 double values, x, y, z, visibility and presence
     auto landmarkCallback = [&](const std::map<std::string, std::vector<std::vector<double>>>& data) {
         for (const auto& [k, v] : data) {
-            std::cout << k << ": "; // Left or Right
+            std::cout << k << ": ";  // Left or Right
             for (const auto& landmark : v) {
                 // do something here
                 std::cout << landmark[0] << " " << landmark[1] << " " << landmark[2] << " | ";
@@ -74,7 +74,7 @@ int main() {
         cv::Mat cameraRGBFrame;
         cv::cvtColor(cameraBGRFrame, cameraRGBFrame, cv::COLOR_BGR2RGB);
         interface->Detect(cameraRGBFrame);
-        
+
         // If you don't need preivew, you can remove matCallback.
         if (outputBGRFrame.cols > 0) {
             cv::imshow("MediaPipe", outputBGRFrame);
@@ -82,7 +82,6 @@ int main() {
 
         int pressed_key = cv::waitKey(30);
         if (pressed_key >= 0 && pressed_key != 255) grabFrames = false;
-        
     }
     interface->Stop();
     delete interface;
