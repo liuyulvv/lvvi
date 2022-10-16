@@ -39,7 +39,7 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
         "D:/opencv/build/include/opencv2"
     )
     link_directories(
-        "./lib"
+        "./lib/win"
         "D:/opencv/build/x64/vc15/lib"
         "D:/opencv/build/x64/vc15/bin"
     )
