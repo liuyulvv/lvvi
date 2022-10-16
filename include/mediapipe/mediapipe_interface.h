@@ -4,6 +4,10 @@
 #include "mediapipe_log.h"
 #include <opencv2/opencv.hpp>
 #include <functional>
+#include <map>
+#include <memory>
+#include <string>
+#include <vector>
 
 class MediapipeInterface {
 public:

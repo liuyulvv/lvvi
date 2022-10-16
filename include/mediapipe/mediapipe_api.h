@@ -3,7 +3,7 @@
 
 #include "mediapipe_interface.h"
 
-#ifdef __WIN32__
+#ifdef _WIN32
 
 #ifndef DllExport
 #define DllExport __declspec(dllexport)
