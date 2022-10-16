@@ -51,4 +51,30 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
             mediapipe
         )
     endforeach()
+else()
+    include_directories(
+        "./include"
+        "./include/mediapipe"
+        "/usr/local/include/opencv4"
+        "/usr/local/include/opencv4/opencv2"
+    )
+    link_directories(
+        "./lib/linux/"
+        "/usr/local/lib"
+    )
+    foreach(mainfile IN LISTS test_src)
+        get_filename_component(testname ${mainfile} NAME_WE)
+        add_executable(${testname} ${mainfile})
+        target_link_libraries(${testname}
+            mediapipe
+            opencv_core
+            opencv_calib3d
+            opencv_features2d
+            opencv_highgui
+            opencv_imgcodecs
+            opencv_imgproc
+            opencv_video
+            opencv_videoio
+        )
+    endforeach()
 endif()
