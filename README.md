@@ -8,12 +8,12 @@ There is a dynamic library in the `lib` directory, but you should regenerate it 
 
 ```bash
 git clone https://github.com/liuyulvv/mediapipe.git
-git checkout dev
+git switch dev
 # You should make sure that mediapipe is configured.
 bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/dll:mediapipe # Mac and Linux, Windows needs to specify the python path.
 ```
 
-Copy the generated files under bazel-bin/mediapipe/dll to the `lib` and `bin` directory.
+Copy the generated files under `bazel-bin/mediapipe/dll` to the `lib` and `bin` directory.
 
 For Mac and Linux, copy `libmediapipe.so` to the corresponding directory of `lib`. For Windows, copy `mediapipe.dll` to the `Release` directory(to use `Debug`, you need to modify CMakeLists), and copy `mediapipe.if.lib` to `lib\windows` and rename to `mediapipe.lib`
 
