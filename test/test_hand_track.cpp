@@ -34,29 +34,31 @@ int main() {
     interface->SetResourceDir("");
     interface->SetGraph("hand_tracking_desktop_live.pbtxt");
 
+    // preview callback
+    // If you don't need preivew, you can remove matCallback.
     auto matCallback = [&](const cv::Mat& frame) {
         cv::cvtColor(frame, outputBGRFrame, cv::COLOR_RGB2BGR);
     };
 
+    interface->OpenPreview(matCallback);
+
+    // get left or right hand label
+    interface->CreateObserver("handedness", nullptr);
+
+    // landmark callback
+    // Left: vector<double>
+    // Right: vector<double>
+    // vector<double> stores 5 double values, x, y, z, visibility and presence
     auto landmarkCallback = [&](const std::map<std::string, std::vector<std::vector<double>>>& data) {
-        auto left = data.find("Left");
-        auto right = data.find("Right");
-        if (left != data.end()) {
-            for (const auto& landmark : left->second) {
-                std::cout << "Left: " << landmark[0] << " " << landmark[1] << " " << landmark[2] << " | ";
-            }
-            std::cout << std::endl;
-        }
-        if (right != data.end()) {
-            for (const auto& landmark : right->second) {
-                std::cout << "Right: " << landmark[0] << " " << landmark[1] << " " << landmark[2] << " | ";
+        for (const auto& [k, v] : data) {
+            std::cout << k << ": "; // Left or Right
+            for (const auto& landmark : v) {
+                // do something here
+                std::cout << landmark[0] << " " << landmark[1] << " " << landmark[2] << " | ";
             }
             std::cout << std::endl;
         }
     };
-
-    interface->OpenPreview(matCallback);
-    interface->CreateObserver("handedness", nullptr);
     interface->CreateObserver("landmarks", landmarkCallback);
     interface->Start();
 
@@ -72,11 +74,15 @@ int main() {
         cv::Mat cameraRGBFrame;
         cv::cvtColor(cameraBGRFrame, cameraRGBFrame, cv::COLOR_BGR2RGB);
         interface->Detect(cameraRGBFrame);
+        
+        // If you don't need preivew, you can remove matCallback.
         if (outputBGRFrame.cols > 0) {
             cv::imshow("MediaPipe", outputBGRFrame);
         }
+
         int pressed_key = cv::waitKey(30);
         if (pressed_key >= 0 && pressed_key != 255) grabFrames = false;
+        
     }
     interface->Stop();
     delete interface;
