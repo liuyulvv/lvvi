@@ -10,7 +10,7 @@ There is a dynamic library in the `lib` directory, but you should regenerate it 
 git clone https://github.com/liuyulvv/mediapipe.git
 git switch dev
 # You should make sure that mediapipe is configured.
-bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/dll:mediapipe # Mac and Linux, Windows needs to specify the python path.
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/dll:mediapipe # Windows needs to specify the python path.
 ```
 
 Copy the generated files under `bazel-bin/mediapipe/dll` to the `lib` and `bin` directory.
@@ -34,7 +34,7 @@ When I tested with current project, I encountered a lot of problems. Here are tw
 
 I installed opencv from `apt` according to the tutorial of mediapipe. And I encountered a segment error about `protobuf` while running the current project.
 
-I tried many methods, and finally remove the `opencv` installed by `apt`. After using the 'setup_opencv.sh' of mediapipe, the error disappeared.
+I tried many methods, and finally remove the `opencv` installed by `apt`. After running the `setup_opencv.sh` of mediapipe, the error disappeared.
 
 ### Clang
 
