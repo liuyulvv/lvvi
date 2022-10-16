@@ -15,7 +15,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     pkg_check_modules(opencv REQUIRED IMPORTED_TARGET opencv4)
 
     link_directories(
-        "./lib"
+        "./lib/mac/"
     )
 
     include_directories(
