@@ -6,10 +6,12 @@
 
 ## 开源许可
 
-- [GLEW](3rd_party/GLEW/LICENSE)
+- [GLEW](thirdparty/GLEW/LICENSE)
 
-- [GLFW](3rd_party/GLFW/LICENSE)
+- [GLFW](thirdparty/GLFW/LICENSE)
 
-- [spdlog](3rd_party/spdlog/LICENSE)
+- [spdlog](thirdparty/spdlog/LICENSE)
 
-- [mediapipe](3rd_party/mediapipe/LICENSE)
+- [mediapipe](thirdparty/mediapipe/LICENSE)
+
+- [OpenCV](thirdparty/OpenCV/LICENSE)
